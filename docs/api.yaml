@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Registrar
+paths:
+  /users:
+    post:
+      summary: As anonymous user I can register, so that I can use service the app provided.
+      operationId: POST_USERS
+      requestBody:
+        description: The user body
+        content:
+          application/json:
+            example:
