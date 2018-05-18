@@ -1,5 +1,9 @@
 {
-	"port": 8080,
-	"bodyLimit": "100kb",
-	"corsHeaders": ["Link"]
+  "port": 8080,
+  "bodyLimit": "100kb",
+  "corsHeaders": [
+    "Link"
+  ],
+  "provider": "http://127.0.0.1:8545",
+  "identitesAddr": "0xf04ed3ee45b5898f19d3991e31bd1a994e4e5068"
 }

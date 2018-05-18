@@ -59,7 +59,6 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 
 
 
@@ -136,3 +135,6 @@ modules.xml
 
 
 # End of https://www.gitignore.io/api/intellij+all
+
+
+dist

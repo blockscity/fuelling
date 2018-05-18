@@ -24,17 +24,20 @@ app.use(bodyParser.json({
 }));
 
 // connect to db
-blockchain(bc => {
+try {
+    blockchain(config).then(bc => {
+        // internal middleware
+        app.use(middleware({config, bc}));
+        // api router
+        app.use('/', api({config, bc}));
 
-    // internal middleware
-    app.use(middleware({config, bc}));
-
-    // api router
-    app.use('/', api({config, bc}));
-
-    app.server.listen(process.env.PORT || config.port, () => {
-        console.log(`Started on port ${app.server.address().port}`);
+        app.server.listen(process.env.PORT || config.port, () => {
+            console.log(`Started on port ${app.server.address().port}`);
+        });
     });
-});
+
+} catch (e) {
+    console.error(e);
+}
 
 export default app;
