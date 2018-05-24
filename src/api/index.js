@@ -50,7 +50,7 @@ export default ({config, bc}) => {
 
         let forwarded = await Promise.promisify(bc.web3.eth.sendRawTransaction)(transaction);
 
-        res.json({forwarded: forwarded});
+        res.json({tx: forwarded});
     }));
 
     // perhaps expose some API metadata at the root
